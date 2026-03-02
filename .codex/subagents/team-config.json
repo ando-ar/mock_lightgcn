@@ -1,0 +1,42 @@
+{
+  "name": "codex-lightgcn-subagents",
+  "description": "Issue-driven subagent template for mock_lightgcn",
+  "roles": [
+    {
+      "id": "team-lead",
+      "responsibility": "Issue selection, decomposition, acceptance criteria, sequencing"
+    },
+    {
+      "id": "researcher",
+      "responsibility": "Model core and paper deep-dive: equations, objectives, architecture, and implementation caveats"
+    },
+    {
+      "id": "implementer",
+      "responsibility": "Code changes with minimal diff"
+    },
+    {
+      "id": "tester",
+      "responsibility": "Tests, regression checks, CI validation"
+    },
+    {
+      "id": "mlops",
+      "responsibility": "Dependencies, environment, pipeline and experiment tooling"
+    },
+    {
+      "id": "reviewer",
+      "responsibility": "Spec alignment, risks, and quality review"
+    }
+  ],
+  "workflow": [
+    "Pick issue and define DoD",
+    "Research only if needed",
+    "Implement minimal change",
+    "Run lint/test and update tests",
+    "Review findings and fix gaps",
+    "Open/merge PR after acceptance criteria pass"
+  ],
+  "required_checks": [
+    "make lint",
+    "make test"
+  ]
+}
