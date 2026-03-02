@@ -1,0 +1,78 @@
+stages:
+  generate_data:
+    cmd: uv run python -c "
+      from mock_lightgcn.config import DataConfig;
+      from mock_lightgcn.dataset import generate_dummy_data, split_train_test, encode_ids;
+      import pandas as pd;
+      cfg = DataConfig();
+      df = generate_dummy_data(cfg);
+      train_df, test_df = split_train_test(df, cfg.train_ratio);
+      train_df, test_df, _, _ = encode_ids(train_df, test_df);
+      train_df.to_parquet('data/processed/train.parquet');
+      test_df.to_parquet('data/processed/test.parquet');
+      print(f'Train: {len(train_df)} rows, Test: {len(test_df)} rows');
+      "
+    deps:
+      - src/mock_lightgcn/config.py
+      - src/mock_lightgcn/dataset.py
+    outs:
+      - data/processed/train.parquet
+      - data/processed/test.parquet
+
+  train:
+    cmd: uv run python -c "
+      import pandas as pd;
+      from mock_lightgcn.config import DataConfig, ModelConfig, EvalConfig;
+      from mock_lightgcn.features import build_adj_matrix;
+      from mock_lightgcn.modeling.train import LightGCN, MultiBehaviorLightGCN, train;
+      train_df = pd.read_parquet('data/processed/train.parquet');
+      test_df = pd.read_parquet('data/processed/test.parquet');
+      data_cfg = DataConfig();
+      model_cfg = ModelConfig();
+      eval_cfg = EvalConfig();
+      num_users = train_df['user_idx'].nunique();
+      num_clients = train_df['client_idx'].nunique();
+      behaviors = ['apply', 'pass', 'offer', 'offer_accept'];
+      adj_matrices = {b: build_adj_matrix(train_df, num_users, num_clients, b) for b in behaviors};
+      model = MultiBehaviorLightGCN(num_users, num_clients, model_cfg);
+      history = train(model, adj_matrices, train_df, test_df, model_cfg, eval_cfg);
+      print('Training complete');
+      "
+    deps:
+      - data/processed/train.parquet
+      - data/processed/test.parquet
+      - src/mock_lightgcn/config.py
+      - src/mock_lightgcn/features.py
+      - src/mock_lightgcn/modeling/train.py
+    outs:
+      - models/best_model.pt
+
+  evaluate:
+    cmd: uv run python -c "
+      import pandas as pd, torch;
+      from mock_lightgcn.config import DataConfig, ModelConfig, EvalConfig;
+      from mock_lightgcn.features import build_adj_matrix;
+      from mock_lightgcn.modeling.train import MultiBehaviorLightGCN, compute_metrics;
+      from mock_lightgcn.modeling.predict import get_recommendations;
+      train_df = pd.read_parquet('data/processed/train.parquet');
+      test_df = pd.read_parquet('data/processed/test.parquet');
+      data_cfg = DataConfig();
+      model_cfg = ModelConfig();
+      eval_cfg = EvalConfig();
+      num_users = train_df['user_idx'].nunique();
+      num_clients = train_df['client_idx'].nunique();
+      behaviors = ['apply', 'pass', 'offer', 'offer_accept'];
+      adj_matrices = {b: build_adj_matrix(train_df, num_users, num_clients, b) for b in behaviors};
+      model = MultiBehaviorLightGCN(num_users, num_clients, model_cfg);
+      model.load_state_dict(torch.load('models/best_model.pt'));
+      print('Evaluation complete');
+      "
+    deps:
+      - data/processed/train.parquet
+      - data/processed/test.parquet
+      - models/best_model.pt
+      - src/mock_lightgcn/modeling/predict.py
+      - src/mock_lightgcn/modeling/train.py
+    metrics:
+      - reports/metrics.json:
+          cache: false

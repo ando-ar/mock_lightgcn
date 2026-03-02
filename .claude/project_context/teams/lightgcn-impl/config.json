@@ -1,0 +1,47 @@
+{
+  "name": "lightgcn-impl",
+  "description": "mock_lightgcn Multi-Behavior LightGCN 実装チーム",
+  "createdAt": 1772374293333,
+  "leadAgentId": "team-lead@lightgcn-impl",
+  "leadSessionId": "201e031d-fe81-4c60-9ea6-0a3bdf2dec78",
+  "members": [
+    {
+      "agentId": "team-lead@lightgcn-impl",
+      "name": "team-lead",
+      "agentType": "team-lead",
+      "model": "claude-sonnet-4-6",
+      "joinedAt": 1772374293333,
+      "tmuxPaneId": "",
+      "cwd": "C:\\Users\\aruto\\dev\\mock_lightgcn",
+      "subscriptions": []
+    },
+    {
+      "agentId": "researcher@lightgcn-impl",
+      "name": "researcher",
+      "agentType": "general-purpose",
+      "model": "claude-opus-4-6",
+      "prompt": "あなたは lightgcn-impl チームの **researcher** です。\nTask #1「researcher: Multi-Behavior LightGCN 論文調査」を担当します。\n\n## 作業内容\n\n以下の情報源を調査して `C:\\Users\\aruto\\dev\\mock_lightgcn\\docs\\research_notes.md` を作成してください。\n\n### 調査対象\n1. **arxiv:2303.15720** — Multi-Behavior LightGCN の論文\n   - URL: https://arxiv.org/abs/2303.15720 (abstract) および https://arxiv.org/pdf/2303.15720 (PDF)\n2. **Wantedly ブログ** — 実装例\n   - URL: https://www.wantedly.com/companies/wantedly/post_articles/1042160\n\n### research_notes.md に含める内容\n1. **アーキテクチャ概要** — 論文タイトル、提案手法の概要\n2. **Multi-Behavior LightGCN のアーキテクチャ詳細**\n   - 行動別 GCN ブランチの構成（各行動ごとの独立した隣接行列を使う方法）\n   - ユーザー・アイテム埋め込みの初期化\n   - グラフ畳み込みの伝播則\n3. **埋め込み統合方法**\n   - 各行動からの埋め込みを加重和で統合する方法\n   - 重みの設定方法（学習可能 vs 固定）\n4. **マルチタスク損失の定式化**\n   - 各行動に対する BPR ロスの定義\n   - 行動ごとの損失重み（上位行動に高い重みを設定）\n   - 合算方法\n5. **実装上の注意点・工夫点**\n   - 対称正規化の実装\n   - スパース行列の効率的な扱い\n   - ネガティブサンプリングの方法\n   - Wantedly の実装例から学んだこと\n\n### 本プロジェクトの仕様との対応\nプロジェクトでは以下の4行動を扱います:\n- apply（応募）\n- pass（書類通過）\n- offer（オファー）\n- offer_accept（オファー受諾）\n\n損失重み: offer_accept=4, offer=3, pass=2, apply=1\n\n### 作業手順\n1. WebFetch で arxiv abstract と PDF を取得\n2. WebFetch で Wantedly ブログを取得（アクセスできない場合は WebSearch で関連情報を検索）\n3. docs/ ディレクトリが存在することを確認（なければ Bash で mkdir）\n4. research_notes.md を Write ツールで作成\n\n### 完了後\nTaskUpdate でTask #1 を completed にマークし、Team Lead（team-lead@lightgcn-impl）にメッセージで完了報告してください。",
+      "color": "blue",
+      "planModeRequired": false,
+      "joinedAt": 1772374389359,
+      "tmuxPaneId": "in-process",
+      "cwd": "C:\\Users\\aruto\\dev\\mock_lightgcn",
+      "subscriptions": [],
+      "backendType": "in-process"
+    },
+    {
+      "agentId": "mlops@lightgcn-impl",
+      "name": "mlops",
+      "agentType": "general-purpose",
+      "model": "claude-opus-4-6",
+      "prompt": "あなたは lightgcn-impl チームの **mlops** です。\nTask #2「mlops: mlflow/dvc を pyproject.toml に追加」を担当します。\n\n## 作業内容\n\n### Step 1: pyproject.toml を更新\n`C:\\Users\\aruto\\dev\\mock_lightgcn\\pyproject.toml` を読んで、`[project].dependencies` に以下を追加してください:\n- `\"mlflow>=2.0\"`\n- `\"dvc>=3.0\"`\n\nEdit ツールを使って追加してください。\n\n### Step 2: uv sync を実行\n```bash\ncd C:\\Users\\aruto\\dev\\mock_lightgcn && uv sync\n```\nを Bash ツールで実行してください（タイムアウト: 300000ms）。\n\nエラーが出た場合はエラーメッセージを記録して、依存関係の競合がないか確認してください。\n\n### 注意事項\n- uv を使う（pip は使わない）\n- `pyproject.toml` の既存の依存関係は変更しない\n- `[tool.uv.sources]` や `[[tool.uv.index]]` セクションは変更しない\n\n### 完了後\nTaskUpdate でTask #2 を completed にマークし、Team Lead（team-lead@lightgcn-impl）にメッセージで完了報告（成功/失敗、エラーがあればその内容）をしてください。",
+      "color": "green",
+      "planModeRequired": false,
+      "joinedAt": 1772374395696,
+      "tmuxPaneId": "in-process",
+      "cwd": "C:\\Users\\aruto\\dev\\mock_lightgcn",
+      "subscriptions": [],
+      "backendType": "in-process"
+    }
+  ]
+}

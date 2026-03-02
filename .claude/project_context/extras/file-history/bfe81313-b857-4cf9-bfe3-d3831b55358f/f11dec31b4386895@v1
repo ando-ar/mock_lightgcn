@@ -1,0 +1,286 @@
+from __future__ import annotations
+
+import os
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+from mock_lightgcn.config import EvalConfig, ModelConfig
+
+BEHAVIOR_WEIGHTS = {"apply": 1, "pass": 2, "offer": 3, "offer_accept": 4}
+BEHAVIORS = list(BEHAVIOR_WEIGHTS.keys())
+BEHAVIOR_DATE_MAP = {
+    "apply": "apply_date",
+    "pass": "pass_date",
+    "offer": "offer_date",
+    "offer_accept": "offer_accept_date",
+}
+
+
+class LightGCN(nn.Module):
+    def __init__(self, num_users: int, num_items: int, config: ModelConfig):
+        super().__init__()
+        self.num_users = num_users
+        self.num_items = num_items
+        self.num_layers = config.num_layers
+        self.embedding = nn.Embedding(num_users + num_items, config.embedding_dim)
+        nn.init.xavier_uniform_(self.embedding.weight)
+
+    def forward(self, adj_matrix: torch.sparse.FloatTensor) -> tuple[torch.Tensor, torch.Tensor]:
+        all_emb = self.embedding.weight
+        embs = [all_emb]
+        for _ in range(self.num_layers):
+            all_emb = torch.sparse.mm(adj_matrix, all_emb)
+            embs.append(all_emb)
+        final_emb = torch.stack(embs, dim=1).mean(dim=1)
+        user_emb = final_emb[: self.num_users]
+        item_emb = final_emb[self.num_users :]
+        return user_emb, item_emb
+
+    def get_embeddings(
+        self, adj_matrix: torch.sparse.FloatTensor
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        return self.forward(adj_matrix)
+
+
+class MultiBehaviorLightGCN(nn.Module):
+    def __init__(self, num_users: int, num_items: int, config: ModelConfig):
+        super().__init__()
+        self.num_users = num_users
+        self.num_items = num_items
+        self.num_layers = config.num_layers
+        self.embedding = nn.Embedding(num_users + num_items, config.embedding_dim)
+        nn.init.xavier_uniform_(self.embedding.weight)
+        self.behavior_weights = BEHAVIOR_WEIGHTS
+
+    def _propagate(self, adj_matrix: torch.sparse.FloatTensor) -> torch.Tensor:
+        """Run LightGCN propagation with shared embeddings."""
+        all_emb = self.embedding.weight
+        embs = [all_emb]
+        for _ in range(self.num_layers):
+            all_emb = torch.sparse.mm(adj_matrix, all_emb)
+            embs.append(all_emb)
+        return torch.stack(embs, dim=1).mean(dim=1)
+
+    def forward(
+        self,
+        adj_matrices: dict[str, torch.sparse.FloatTensor],
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        weight_sum = sum(self.behavior_weights.values())
+        final_emb = None
+        for behavior, adj in adj_matrices.items():
+            w = self.behavior_weights[behavior]
+            emb = self._propagate(adj)
+            if final_emb is None:
+                final_emb = w * emb
+            else:
+                final_emb = final_emb + w * emb
+        final_emb = final_emb / weight_sum
+        user_emb = final_emb[: self.num_users]
+        item_emb = final_emb[self.num_users :]
+        return user_emb, item_emb
+
+
+def bpr_loss(
+    user_emb: torch.Tensor,
+    item_emb: torch.Tensor,
+    users: torch.Tensor,
+    pos_items: torch.Tensor,
+    neg_items: torch.Tensor,
+    base_embeddings: torch.Tensor,
+    lambda_reg: float,
+) -> torch.Tensor:
+    """BPR loss with L2 regularization on base embeddings."""
+    pos_score = (user_emb[users] * item_emb[pos_items]).sum(dim=-1)
+    neg_score = (user_emb[users] * item_emb[neg_items]).sum(dim=-1)
+    bpr = -F.logsigmoid(pos_score - neg_score).mean()
+    reg = base_embeddings.norm(p=2).pow(2) * lambda_reg / 2
+    return bpr + reg
+
+
+def compute_metrics(
+    user_emb: torch.Tensor,
+    item_emb: torch.Tensor,
+    test_pairs: list[tuple[int, int]],
+    train_pairs_set: set[tuple[int, int]],
+    k_values: list[int],
+    num_items: int,
+) -> dict[str, float]:
+    """Compute Precision@k for each k value."""
+    if not test_pairs:
+        return {f"precision@{k}": 0.0 for k in k_values}
+
+    # Group test pairs by user
+    user_pos: dict[int, set[int]] = {}
+    for u, i in test_pairs:
+        user_pos.setdefault(u, set()).add(i)
+
+    max_k = max(k_values)
+    precisions: dict[int, list[float]] = {k: [] for k in k_values}
+
+    with torch.no_grad():
+        for user_idx, pos_items in user_pos.items():
+            scores = user_emb[user_idx] @ item_emb.T  # [num_items]
+            # Mask out train items
+            for item_idx in range(num_items):
+                if (user_idx, item_idx) in train_pairs_set:
+                    scores[item_idx] = -float("inf")
+            _, topk_indices = torch.topk(scores, min(max_k, num_items))
+            topk_list = topk_indices.cpu().tolist()
+            for k in k_values:
+                hits = sum(1 for idx in topk_list[:k] if idx in pos_items)
+                precisions[k].append(hits / k)
+
+    return {
+        f"precision@{k}": float(np.mean(precisions[k])) if precisions[k] else 0.0 for k in k_values
+    }
+
+
+def _build_behavior_pairs(
+    df: pd.DataFrame,
+) -> dict[str, list[tuple[int, int]]]:
+    """Extract (user_idx, client_idx) positive pairs per behavior."""
+    pairs: dict[str, list[tuple[int, int]]] = {}
+    for behavior, date_col in BEHAVIOR_DATE_MAP.items():
+        filtered = df[df[date_col].notna()]
+        pairs[behavior] = list(zip(filtered["user_idx"].values, filtered["client_idx"].values))
+    return pairs
+
+
+def _sample_negatives(
+    pairs: list[tuple[int, int]],
+    num_items: int,
+    pos_set: set[tuple[int, int]],
+    rng: np.random.Generator,
+) -> np.ndarray:
+    """Sample one negative item per positive pair."""
+    neg_items = np.empty(len(pairs), dtype=np.int64)
+    for i, (u, _) in enumerate(pairs):
+        while True:
+            neg = rng.integers(0, num_items)
+            if (u, neg) not in pos_set:
+                neg_items[i] = neg
+                break
+    return neg_items
+
+
+def train(
+    model: nn.Module,
+    adj_matrices: dict[str, torch.sparse.FloatTensor],
+    train_df: pd.DataFrame,
+    val_df: pd.DataFrame,
+    config: ModelConfig,
+    eval_config: EvalConfig,
+    model_save_path: str = "models/best_model.pt",
+) -> dict[str, list[float]]:
+    """Train MultiBehaviorLightGCN with BPR loss and early stopping."""
+    os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
+
+    device = next(model.parameters()).device
+    optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
+    rng = np.random.default_rng(42)
+
+    # Build per-behavior positive pairs from training data
+    train_behavior_pairs = _build_behavior_pairs(train_df)
+    train_behavior_sets: dict[str, set[tuple[int, int]]] = {
+        b: set(pairs) for b, pairs in train_behavior_pairs.items()
+    }
+
+    # Validation pairs (apply behavior for early stopping)
+    val_apply_pairs = list(
+        zip(
+            val_df[val_df["apply_date"].notna()]["user_idx"].values,
+            val_df[val_df["apply_date"].notna()]["client_idx"].values,
+        )
+    )
+    train_apply_set = train_behavior_sets.get("apply", set())
+
+    num_items = model.num_items
+    history: dict[str, list[float]] = {"train_loss": [], "val_precision@10": []}
+    best_precision = -1.0
+    patience_counter = 0
+
+    for epoch in range(config.epochs):
+        model.train()
+        epoch_losses: list[float] = []
+
+        # Multi-task BPR: sum over behaviors
+        weight_sum = sum(BEHAVIOR_WEIGHTS.values())
+
+        for behavior, pairs in train_behavior_pairs.items():
+            if not pairs:
+                continue
+            w = BEHAVIOR_WEIGHTS[behavior]
+            pos_set = train_behavior_sets[behavior]
+
+            # Shuffle and batch
+            indices = rng.permutation(len(pairs))
+            for start in range(0, len(indices), config.batch_size):
+                batch_idx = indices[start : start + config.batch_size]
+                batch_pairs = [pairs[i] for i in batch_idx]
+                neg = _sample_negatives(batch_pairs, num_items, pos_set, rng)
+
+                users_t = torch.tensor(
+                    [p[0] for p in batch_pairs], dtype=torch.long, device=device
+                )
+                pos_t = torch.tensor([p[1] for p in batch_pairs], dtype=torch.long, device=device)
+                neg_t = torch.tensor(neg, dtype=torch.long, device=device)
+
+                if isinstance(model, MultiBehaviorLightGCN):
+                    user_emb, item_emb = model(adj_matrices)
+                else:
+                    user_emb, item_emb = model(adj_matrices.get("apply"))
+
+                loss = bpr_loss(
+                    user_emb,
+                    item_emb,
+                    users_t,
+                    pos_t,
+                    neg_t,
+                    model.embedding.weight,
+                    config.lambda_reg,
+                )
+                weighted_loss = loss * w / weight_sum
+
+                optimizer.zero_grad()
+                weighted_loss.backward()
+                optimizer.step()
+                epoch_losses.append(weighted_loss.item())
+
+        avg_loss = float(np.mean(epoch_losses)) if epoch_losses else 0.0
+        history["train_loss"].append(avg_loss)
+
+        # Evaluate every 10 epochs
+        if (epoch + 1) % 10 == 0:
+            model.eval()
+            with torch.no_grad():
+                if isinstance(model, MultiBehaviorLightGCN):
+                    user_emb, item_emb = model(adj_matrices)
+                else:
+                    user_emb, item_emb = model(adj_matrices.get("apply"))
+
+                metrics = compute_metrics(
+                    user_emb,
+                    item_emb,
+                    val_apply_pairs,
+                    train_apply_set,
+                    eval_config.k_values,
+                    num_items,
+                )
+            val_p10 = metrics.get("precision@10", 0.0)
+            history["val_precision@10"].append(val_p10)
+
+            if val_p10 > best_precision:
+                best_precision = val_p10
+                patience_counter = 0
+                torch.save(model.state_dict(), model_save_path)
+            else:
+                patience_counter += 1
+
+            if patience_counter >= config.patience:
+                break
+
+    return history

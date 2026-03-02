@@ -1,0 +1,1 @@
+./.ai/AGENT_SHARED.md

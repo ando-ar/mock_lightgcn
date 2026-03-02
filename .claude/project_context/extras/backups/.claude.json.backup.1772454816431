@@ -1,0 +1,410 @@
+{
+  "numStartups": 14,
+  "installMethod": "native",
+  "autoUpdates": false,
+  "hasSeenTasksHint": true,
+  "tipsHistory": {
+    "new-user-warmup": 7,
+    "plan-mode-for-complex-tasks": 10,
+    "default-permission-mode-config": 11,
+    "terminal-setup": 12,
+    "memory-command": 1,
+    "theme-command": 1,
+    "shift-enter-setup": 12,
+    "status-line": 2,
+    "prompt-queue": 12,
+    "enter-to-steer-in-relatime": 2,
+    "todo-list": 3,
+    "install-github-app": 13,
+    "install-slack-app": 13,
+    "drag-and-drop-images": 13,
+    "double-esc-code-restore": 13,
+    "continue": 3,
+    "shift-tab": 3,
+    "image-paste": 3,
+    "desktop-app": 3,
+    "web-app": 3,
+    "mobile-app": 3,
+    "custom-agents": 6,
+    "agent-flag": 6,
+    "overage-promo": 9,
+    "permissions": 11,
+    "rename-conversation": 11,
+    "custom-commands": 11
+  },
+  "promptQueueUseCount": 3,
+  "cachedGrowthBookFeatures": {
+    "tengu_1p_event_batch_config": {
+      "scheduledDelayMillis": 5000,
+      "maxExportBatchSize": 200,
+      "maxQueueSize": 8192
+    },
+    "tengu_mcp_tool_search": true,
+    "tengu_scratch": false,
+    "tengu_brass_pebble": false,
+    "tengu_event_sampling_config": {},
+    "tengu_marble_anvil": true,
+    "tengu_tool_pear": false,
+    "tengu_scarf_coffee": false,
+    "tengu_log_segment_events": false,
+    "tengu_log_datadog_events": true,
+    "tengu_keybinding_customization_release": true,
+    "tengu_thinkback": false,
+    "tengu_pid_based_version_locking": true,
+    "tengu_disable_bypass_permissions_mode": false,
+    "tengu_c4w_usage_limit_notifications_enabled": true,
+    "tengu-top-of-feed-tip": {
+      "tip": "",
+      "color": ""
+    },
+    "tengu_react_vulnerability_warning": false,
+    "tengu_code_diff_cli": true,
+    "tengu_pr_status_cli": true,
+    "tengu_marble_kite": false,
+    "tengu_post_compact_survey": false,
+    "tengu_claudeai_mcp_connectors": true,
+    "tengu_system_prompt_global_cache": true,
+    "tengu_coral_fern": true,
+    "tengu_cache_plum_violet": true,
+    "tengu_streaming_tool_execution2": true,
+    "tengu_tool_search_unsupported_models": [
+      "haiku"
+    ],
+    "tengu_attribution_header": true,
+    "enhanced_telemetry_beta": false,
+    "tengu_workout": false,
+    "tengu_session_memory": false,
+    "tengu_plank_river_frost": "user_intent",
+    "tengu_oboe": true,
+    "tengu_tst_names_in_messages": false,
+    "tengu_vinteuil_phrase": true,
+    "tengu_permission_explainer": true,
+    "tengu_cork_m4q": true,
+    "tengu_plan_mode_interview_phase": false,
+    "tengu_file_write_optimization": true,
+    "tengu_chomp_inflection": false,
+    "tengu_silver_lantern": false,
+    "tengu_copper_lantern": false,
+    "tengu_workout2": true,
+    "tengu_copper_lantern_config": {
+      "meridian": "2026-02-05T07:59:00Z"
+    },
+    "tengu_penguins_enabled": true,
+    "tengu_penguins_off": null,
+    "tengu_mcp_elicitation": false,
+    "tengu_marble_lantern_disabled": false,
+    "tengu_vscode_review_upsell": false,
+    "tengu_vscode_onboarding": false,
+    "tengu_quiet_fern": true,
+    "tengu_bergotte_lantern": false,
+    "tengu_tst_kx7": false,
+    "tengu_snippet_save": false,
+    "tengu_slate_nexus": true,
+    "tengu_marble_sandcastle": true,
+    "tengu_fgts": false,
+    "tengu_mulberry_fog": false,
+    "tengu_moth_copse": false,
+    "tengu_prompt_cache_1h_config": {
+      "allowlist": [
+        "repl_main_thread*",
+        "sdk"
+      ]
+    },
+    "tengu_oak_drum": false,
+    "tengu_birthday_hat": false,
+    "tengu_immediate_model_command": false,
+    "tengu_birch_mist": true,
+    "tengu_amber_quartz": false,
+    "tengu_amber_flint": true,
+    "tengu_streaming_text": false,
+    "tengu_ccr_bridge": true,
+    "tengu_pebble_leaf_prune": false,
+    "tengu_summarize_tool_results": false,
+    "tengu_swann_brevity": "control",
+    "tengu_coral_whistle": false,
+    "tengu_tool_input_aliasing": false,
+    "tengu_auto_background_agents": false,
+    "tengu_amber_prism": false,
+    "tengu_destructive_command_warning": false,
+    "tengu_plum_vx3": true,
+    "tengu_disable_streaming_to_non_streaming_fallback": false
+  },
+  "userID": "1a84a86c357c159a48519398d893dd09257c85c4f58c38c57904aab86bbf6493",
+  "firstStartTime": "2026-01-29T12:02:50.973Z",
+  "sonnet45MigrationComplete": true,
+  "opus45MigrationComplete": true,
+  "opusProMigrationComplete": true,
+  "thinkingMigrationComplete": true,
+  "cachedChromeExtensionInstalled": false,
+  "changelogLastFetched": 1772370872776,
+  "autoUpdatesProtectedForNative": true,
+  "oauthAccount": {
+    "accountUuid": "ff885ee0-39da-40d6-b0ee-21bbf2e8d069",
+    "emailAddress": "andoar449@gmail.com",
+    "organizationUuid": "c1f16e5f-6cee-4106-a42d-146e944b2338",
+    "hasExtraUsageEnabled": false,
+    "displayName": "Aruto",
+    "organizationRole": "admin",
+    "workspaceRole": null,
+    "organizationName": "andoar449@gmail.com's Organization",
+    "billingType": "stripe_subscription",
+    "accountCreatedAt": "2024-03-08T10:59:25.192358Z",
+    "subscriptionCreatedAt": "2025-12-31T02:13:06.839109Z"
+  },
+  "claudeCodeFirstTokenDate": "2025-12-31T02:13:38.155624Z",
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "2.1.23",
+  "projects": {
+    "C:/Users/aruto/dev/hr_ml_mlflow_mock": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 1,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "hasCompletedProjectOnboarding": true,
+      "lastCost": 0.76703465,
+      "lastAPIDuration": 246490,
+      "lastAPIDurationWithoutRetries": 246389,
+      "lastToolDuration": 156132,
+      "lastDuration": 527147,
+      "lastLinesAdded": 204,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 10068,
+      "lastTotalOutputTokens": 11835,
+      "lastTotalCacheCreationInputTokens": 111759,
+      "lastTotalCacheReadInputTokens": 735575,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 5.03,
+      "lastFpsLow1Pct": 118.87,
+      "lastModelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 10053,
+          "outputTokens": 7664,
+          "cacheReadInputTokens": 438474,
+          "cacheCreationInputTokens": 55316,
+          "webSearchRequests": 0,
+          "costUSD": 0.16136540000000005
+        },
+        "claude-opus-4-6": {
+          "inputTokens": 15,
+          "outputTokens": 4171,
+          "cacheReadInputTokens": 297101,
+          "cacheCreationInputTokens": 56443,
+          "webSearchRequests": 0,
+          "costUSD": 0.60566925
+        }
+      },
+      "lastSessionId": "236dffd7-cebb-4221-96b8-3454667420c6",
+      "disabledMcpServers": [
+        "codex"
+      ]
+    },
+    "C:/Users/aruto": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [],
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "lastCost": 0.6044791999999999,
+      "lastAPIDuration": 219032,
+      "lastAPIDurationWithoutRetries": 218946,
+      "lastToolDuration": 163372,
+      "lastDuration": 23830400,
+      "lastLinesAdded": 430,
+      "lastLinesRemoved": 7,
+      "lastTotalInputTokens": 23972,
+      "lastTotalOutputTokens": 12877,
+      "lastTotalCacheCreationInputTokens": 58588,
+      "lastTotalCacheReadInputTokens": 493242,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 0.21,
+      "lastFpsLow1Pct": 80.97,
+      "lastModelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 23918,
+          "outputTokens": 4983,
+          "cacheReadInputTokens": 265187,
+          "cacheCreationInputTokens": 29739,
+          "webSearchRequests": 0,
+          "costUSD": 0.11252545000000001
+        },
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 54,
+          "outputTokens": 7894,
+          "cacheReadInputTokens": 228055,
+          "cacheCreationInputTokens": 28849,
+          "webSearchRequests": 0,
+          "costUSD": 0.49195374999999997
+        }
+      },
+      "lastSessionId": "aaaf1549-364a-4432-a391-954fdd9afd94"
+    },
+    "C:/Users/aruto/dev/techtekt_202602": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 2,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "hasCompletedProjectOnboarding": true,
+      "lastCost": 0.25323500000000004,
+      "lastAPIDuration": 77044,
+      "lastAPIDurationWithoutRetries": 76994,
+      "lastToolDuration": 21500,
+      "lastDuration": 355769274,
+      "lastLinesAdded": 71,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 328,
+      "lastTotalOutputTokens": 2547,
+      "lastTotalCacheCreationInputTokens": 14948,
+      "lastTotalCacheReadInputTokens": 192558,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 0.01,
+      "lastFpsLow1Pct": 141.79,
+      "lastModelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 316,
+          "outputTokens": 26,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.000446
+        },
+        "claude-opus-4-6": {
+          "inputTokens": 12,
+          "outputTokens": 2521,
+          "cacheReadInputTokens": 192558,
+          "cacheCreationInputTokens": 14948,
+          "webSearchRequests": 0,
+          "costUSD": 0.25278900000000004
+        }
+      },
+      "lastSessionId": "51f19807-26b7-42cf-b62c-3189a82aa201",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 2404,
+        "frame_duration_ms_min": 0.15440000000000964,
+        "frame_duration_ms_max": 48.48129999637604,
+        "frame_duration_ms_avg": 1.736713976046298,
+        "frame_duration_ms_p50": 1.2868499755859375,
+        "frame_duration_ms_p95": 3.7961800217628463,
+        "frame_duration_ms_p99": 7.4625249672413325
+      }
+    },
+    "C:/Users/aruto/dev/mock_lightgcn": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 1,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "hasCompletedProjectOnboarding": true,
+      "lastCost": 0,
+      "lastAPIDuration": 0,
+      "lastAPIDurationWithoutRetries": 0,
+      "lastToolDuration": 0,
+      "lastDuration": 419027,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 0,
+      "lastTotalOutputTokens": 0,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 2.55,
+      "lastFpsLow1Pct": 126.28,
+      "lastModelUsage": {},
+      "lastSessionId": "15c040ec-4a3b-4824-be24-dd29124dc871",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 1066,
+        "frame_duration_ms_min": 0.1902000000118278,
+        "frame_duration_ms_max": 25.381000000052154,
+        "frame_duration_ms_avg": 1.640506566604226,
+        "frame_duration_ms_p50": 1.4561000000030617,
+        "frame_duration_ms_p95": 3.0307500000119005,
+        "frame_duration_ms_p99": 7.849316999999277
+      }
+    }
+  },
+  "groveConfigCache": {
+    "ff885ee0-39da-40d6-b0ee-21bbf2e8d069": {
+      "grove_enabled": true,
+      "timestamp": 1772370188225
+    }
+  },
+  "s1mAccessCache": {
+    "c1f16e5f-6cee-4106-a42d-146e944b2338": {
+      "hasAccess": false,
+      "hasAccessNotAsDefault": false,
+      "timestamp": 1771495268104
+    }
+  },
+  "lastReleaseNotesSeen": "2.1.63",
+  "hasShownOpus45Notice": {
+    "c1f16e5f-6cee-4106-a42d-146e944b2338": true
+  },
+  "officialMarketplaceAutoInstallAttempted": true,
+  "officialMarketplaceAutoInstalled": true,
+  "skillUsage": {
+    "init": {
+      "usageCount": 2,
+      "lastUsedAt": 1772370190984
+    }
+  },
+  "lastPlanModeUse": 1772376265954,
+  "hasIdeOnboardingBeenShown": {
+    "vscode": true
+  },
+  "clientDataCache": {
+    "data": {},
+    "timestamp": 1772370251313
+  },
+  "mcpServers": {},
+  "githubRepoPaths": {
+    "ando-ar/hr_ml_mlflow_mock": [
+      "C:\\Users\\aruto\\dev\\hr_ml_mlflow_mock"
+    ]
+  },
+  "hasShownOpus46Notice": {
+    "c1f16e5f-6cee-4106-a42d-146e944b2338": true
+  },
+  "showSpinnerTree": true,
+  "penguinModeOrgEnabled": false,
+  "sonnet1m45MigrationComplete": true,
+  "cachedExtraUsageDisabledReason": "org_level_disabled"
+}

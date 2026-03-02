@@ -1,0 +1,372 @@
+2026-03-02T12:21:34.484Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T12:21:34.485Z [DEBUG] MDM settings load completed in 23ms
+2026-03-02T12:21:34.536Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-02T12:21:34.536Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-02T12:21:34.536Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-02T12:21:34.537Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-02T12:21:34.561Z [DEBUG] Using bash path: "C:\Program Files\Git\bin\bash.exe"
+2026-03-02T12:21:34.575Z [DEBUG] Applying permission update: Adding 13 allow rule(s) to destination 'localSettings': ["WebFetch(domain:arxiv.org)","WebFetch(domain:www.wantedly.com)","Bash(uv sync:*)","WebSearch","WebFetch(domain:ar5iv.labs.arxiv.org)","WebFetch(domain:dl.acm.org)","Bash(uv run:*)","Bash(mkdir:*)","Bash(.venv/Scripts/dvc init:*)","Bash(.venv/Scripts/python:*)","Bash(.venv/Scripts/ruff check:*)","Bash(.venv/Scripts/pytest:*)","Bash(.venv/Scripts/ruff:*)"]
+2026-03-02T12:21:34.577Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-02T12:21:34.582Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-02T12:21:34.583Z [DEBUG] [STARTUP] Running setup()...
+2026-03-02T12:21:34.589Z [DEBUG] [TeammateModeSnapshot] Captured from config: auto
+2026-03-02T12:21:34.591Z [DEBUG] Loading skills from: managed=C:\ProgramData\ClaudeCode\.claude\skills, user=C:\Users\aruto\.claude\skills, project=[]
+2026-03-02T12:21:34.592Z [DEBUG] Error log sink initialized
+2026-03-02T12:21:34.620Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-03-02T12:21:34.632Z [DEBUG] Loaded 3 installed plugins from C:\Users\aruto\.claude\plugins\installed_plugins.json
+2026-03-02T12:21:34.634Z [DEBUG] Loaded 0 unique skills (0 unconditional, 0 conditional, managed: 0, user: 0, project: 0, additional: 0, legacy commands: 0)
+2026-03-02T12:21:34.635Z [DEBUG] [STARTUP] setup() completed in 52ms
+2026-03-02T12:21:34.635Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-02T12:21:34.647Z [DEBUG] Git remote URL: null
+2026-03-02T12:21:34.647Z [DEBUG] No git remote URL found
+2026-03-02T12:21:34.648Z [DEBUG] [Claude in Chrome] Found edge profiles: Default
+2026-03-02T12:21:34.649Z [DEBUG] [Claude in Chrome] Extension not found in any browser
+2026-03-02T12:21:34.659Z [DEBUG] Loading plugin example-skills from source: "./"
+2026-03-02T12:21:34.659Z [DEBUG] Loading plugin document-skills from source: "./"
+2026-03-02T12:21:34.667Z [DEBUG] Loading plugin context7 from source: "./external_plugins/context7"
+2026-03-02T12:21:34.670Z [DEBUG] Using git SHA for document-skills@anthropic-agent-skills: 3d5951151859
+2026-03-02T12:21:34.671Z [DEBUG] Using git SHA for example-skills@anthropic-agent-skills: 3d5951151859
+2026-03-02T12:21:34.671Z [DEBUG] Plugin example-skills@anthropic-agent-skills version 3d5951151859 already cached at C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859
+2026-03-02T12:21:34.671Z [DEBUG] Resolved local plugin example-skills to versioned cache: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859
+2026-03-02T12:21:34.671Z [DEBUG] Plugin document-skills@anthropic-agent-skills version 3d5951151859 already cached at C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859
+2026-03-02T12:21:34.671Z [DEBUG] Resolved local plugin document-skills to versioned cache: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859
+2026-03-02T12:21:34.672Z [DEBUG] Processing 12 skill paths for plugin example-skills
+2026-03-02T12:21:34.672Z [DEBUG] Processing 4 skill paths for plugin document-skills
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/algorithmic-art -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\algorithmic-art (exists: true)
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/xlsx -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\xlsx (exists: true)
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/brand-guidelines -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\brand-guidelines (exists: true)
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/canvas-design -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\canvas-design (exists: true)
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/docx -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\docx (exists: true)
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/doc-coauthoring -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\doc-coauthoring (exists: true)
+2026-03-02T12:21:34.672Z [DEBUG] Checking skill path: ./skills/pptx -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pptx (exists: true)
+2026-03-02T12:21:34.673Z [DEBUG] Checking skill path: ./skills/frontend-design -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\frontend-design (exists: true)
+2026-03-02T12:21:34.673Z [DEBUG] Checking skill path: ./skills/pdf -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pdf (exists: true)
+2026-03-02T12:21:34.673Z [DEBUG] Found 4 valid skill paths for plugin document-skills, setting skillsPaths
+2026-03-02T12:21:34.673Z [DEBUG] Checking skill path: ./skills/internal-comms -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\internal-comms (exists: true)
+2026-03-02T12:21:34.673Z [DEBUG] Checking skill path: ./skills/mcp-builder -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\mcp-builder (exists: true)
+2026-03-02T12:21:34.673Z [DEBUG] Checking skill path: ./skills/skill-creator -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\skill-creator (exists: true)
+2026-03-02T12:21:34.674Z [DEBUG] Checking skill path: ./skills/slack-gif-creator -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\slack-gif-creator (exists: true)
+2026-03-02T12:21:34.674Z [DEBUG] Checking skill path: ./skills/theme-factory -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\theme-factory (exists: true)
+2026-03-02T12:21:34.674Z [DEBUG] Checking skill path: ./skills/web-artifacts-builder -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\web-artifacts-builder (exists: true)
+2026-03-02T12:21:34.674Z [DEBUG] Checking skill path: ./skills/webapp-testing -> C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\webapp-testing (exists: true)
+2026-03-02T12:21:34.674Z [DEBUG] Found 12 valid skill paths for plugin example-skills, setting skillsPaths
+2026-03-02T12:21:34.686Z [DEBUG] Using git SHA for context7@claude-plugins-official: 55b58ec6e564
+2026-03-02T12:21:34.687Z [DEBUG] Plugin context7@claude-plugins-official version 55b58ec6e564 already cached at C:\Users\aruto\.claude\plugins\cache\claude-plugins-official\context7\55b58ec6e564
+2026-03-02T12:21:34.687Z [DEBUG] Resolved local plugin context7 to versioned cache: C:\Users\aruto\.claude\plugins\cache\claude-plugins-official\context7\55b58ec6e564
+2026-03-02T12:21:34.689Z [DEBUG] Found 3 plugins (3 enabled, 0 disabled)
+2026-03-02T12:21:34.689Z [DEBUG] getPluginSkills: Processing 3 enabled plugins
+2026-03-02T12:21:34.689Z [DEBUG] Checking plugin context7: skillsPath=none, skillsPaths=0 paths
+2026-03-02T12:21:34.689Z [DEBUG] Checking plugin document-skills: skillsPath=exists, skillsPaths=4 paths
+2026-03-02T12:21:34.689Z [DEBUG] Attempting to load skills from plugin document-skills default skillsPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills
+2026-03-02T12:21:34.689Z [DEBUG] Total plugin commands loaded: 0
+2026-03-02T12:21:34.689Z [DEBUG] Registered 0 hooks from 3 plugins
+2026-03-02T12:21:34.689Z [DEBUG] Total plugin agents loaded: 0
+2026-03-02T12:21:34.723Z [DEBUG] Loaded 16 skills from plugin document-skills default directory
+2026-03-02T12:21:34.723Z [DEBUG] Attempting to load skills from plugin document-skills skillsPaths: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\xlsx, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\docx, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pptx, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pdf
+2026-03-02T12:21:34.723Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\xlsx for plugin document-skills
+2026-03-02T12:21:34.723Z [DEBUG] Loaded 0 skills from plugin document-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\xlsx
+2026-03-02T12:21:34.723Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\docx for plugin document-skills
+2026-03-02T12:21:34.724Z [DEBUG] Loaded 0 skills from plugin document-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\docx
+2026-03-02T12:21:34.724Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pptx for plugin document-skills
+2026-03-02T12:21:34.724Z [DEBUG] Loaded 0 skills from plugin document-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pptx
+2026-03-02T12:21:34.724Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pdf for plugin document-skills
+2026-03-02T12:21:34.725Z [DEBUG] Loaded 0 skills from plugin document-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\document-skills\3d5951151859\skills\pdf
+2026-03-02T12:21:34.725Z [DEBUG] Checking plugin example-skills: skillsPath=exists, skillsPaths=12 paths
+2026-03-02T12:21:34.725Z [DEBUG] Attempting to load skills from plugin example-skills default skillsPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills
+2026-03-02T12:21:34.747Z [DEBUG] Loaded 16 skills from plugin example-skills default directory
+2026-03-02T12:21:34.747Z [DEBUG] Attempting to load skills from plugin example-skills skillsPaths: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\algorithmic-art, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\brand-guidelines, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\canvas-design, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\doc-coauthoring, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\frontend-design, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\internal-comms, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\mcp-builder, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\skill-creator, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\slack-gif-creator, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\theme-factory, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\web-artifacts-builder, C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\webapp-testing
+2026-03-02T12:21:34.747Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\algorithmic-art for plugin example-skills
+2026-03-02T12:21:34.747Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\algorithmic-art
+2026-03-02T12:21:34.747Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\brand-guidelines for plugin example-skills
+2026-03-02T12:21:34.748Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\brand-guidelines
+2026-03-02T12:21:34.748Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\canvas-design for plugin example-skills
+2026-03-02T12:21:34.748Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\canvas-design
+2026-03-02T12:21:34.748Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\doc-coauthoring for plugin example-skills
+2026-03-02T12:21:34.749Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\doc-coauthoring
+2026-03-02T12:21:34.749Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\frontend-design for plugin example-skills
+2026-03-02T12:21:34.749Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\frontend-design
+2026-03-02T12:21:34.749Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\internal-comms for plugin example-skills
+2026-03-02T12:21:34.749Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\internal-comms
+2026-03-02T12:21:34.749Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\mcp-builder for plugin example-skills
+2026-03-02T12:21:34.750Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\mcp-builder
+2026-03-02T12:21:34.750Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\skill-creator for plugin example-skills
+2026-03-02T12:21:34.750Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\skill-creator
+2026-03-02T12:21:34.750Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\slack-gif-creator for plugin example-skills
+2026-03-02T12:21:34.750Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\slack-gif-creator
+2026-03-02T12:21:34.750Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\theme-factory for plugin example-skills
+2026-03-02T12:21:34.751Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\theme-factory
+2026-03-02T12:21:34.751Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\web-artifacts-builder for plugin example-skills
+2026-03-02T12:21:34.751Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\web-artifacts-builder
+2026-03-02T12:21:34.751Z [DEBUG] Loading from skillPath: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\webapp-testing for plugin example-skills
+2026-03-02T12:21:34.754Z [DEBUG] Loaded 0 skills from plugin example-skills custom path: C:\Users\aruto\.claude\plugins\cache\anthropic-agent-skills\example-skills\3d5951151859\skills\webapp-testing
+2026-03-02T12:21:34.754Z [DEBUG] Total plugin skills loaded: 32
+2026-03-02T12:21:34.754Z [DEBUG] getSkills returning: 0 skill dir commands, 32 plugin skills, 5 bundled skills
+2026-03-02T12:21:34.755Z [DEBUG] [STARTUP] Commands and agents loaded in 120ms
+2026-03-02T12:21:34.758Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-03-02T12:21:34.802Z [DEBUG] Grove: Using fresh cached config
+2026-03-02T12:21:34.824Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2026-03-02T12:21:34.825Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-02T12:21:34.825Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-02T12:21:34.831Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-02T12:21:34.848Z [DEBUG] [keybindings] Watching for changes to C:\Users\aruto\.claude\keybindings.json
+2026-03-02T12:21:34.903Z [ERROR] AxiosError: [url=https://platform.claude.com/v1/oauth/token,status=503,body=upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:21:34.981Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454094981
+2026-03-02T12:21:34.981Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:21:34.982Z [DEBUG] Temp file written successfully, size: 13936 bytes
+2026-03-02T12:21:34.982Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:21:34.982Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454094981 to C:\Users\aruto\.claude.json
+2026-03-02T12:21:34.982Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:21:34.993Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454094993
+2026-03-02T12:21:34.993Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:21:34.994Z [DEBUG] Temp file written successfully, size: 13937 bytes
+2026-03-02T12:21:34.994Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:21:34.994Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454094993 to C:\Users\aruto\.claude.json
+2026-03-02T12:21:34.995Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:21:37.843Z [DEBUG] Failed to fetch Grove notice config: AxiosError: timeout of 3000ms exceeded
+2026-03-02T12:21:42.926Z [ERROR] AxiosError: [url=https://api.anthropic.com/api/oauth/account/settings,status=500,body=Internal server error] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:21:42.927Z [DEBUG] [STARTUP] showSetupScreens() completed in 8169ms
+2026-03-02T12:21:42.927Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-02T12:21:42.927Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-02T12:21:42.927Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-02T12:21:42.928Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T12:21:42.928Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T12:21:42.930Z [DEBUG] [STARTUP] MCP configs loaded in 8353ms
+2026-03-02T12:21:42.933Z [DEBUG] CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR not set, no file descriptor token available
+2026-03-02T12:21:42.936Z [DEBUG] MCP server "plugin:context7:context7": Starting connection with timeout of 30000ms
+2026-03-02T12:21:42.965Z [DEBUG] All plugins already exist, skipping migration
+2026-03-02T12:21:42.967Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-03-02T12:21:42.967Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T12:21:42.967Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-03-02T12:21:42.967Z [DEBUG] Initialized versioned plugins system with 3 plugins
+2026-03-02T12:21:42.968Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-03-02T12:21:42.969Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454102969
+2026-03-02T12:21:42.969Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:21:42.971Z [DEBUG] Temp file written successfully, size: 13937 bytes
+2026-03-02T12:21:42.971Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:21:42.971Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454102969 to C:\Users\aruto\.claude.json
+2026-03-02T12:21:42.971Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:21:43.020Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-02T12:21:43.032Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:43.037Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:43.057Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-03-02T12:21:43.058Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-03-02T12:21:43.059Z [DEBUG] performStartupChecks called
+2026-03-02T12:21:43.059Z [DEBUG] Starting background plugin installations
+2026-03-02T12:21:43.062Z [DEBUG] Loaded 2 CLAUDE.md/rules files:
+  [Project] C:\Users\aruto\dev\mock_lightgcn\CLAUDE.md (1320 chars)
+  [AutoMem] C:\Users\aruto\.claude\projects\C--Users-aruto-dev-mock-lightgcn\memory\MEMORY.md (3100 chars)
+2026-03-02T12:21:43.080Z [DEBUG] performBackgroundPluginInstallations called
+2026-03-02T12:21:43.214Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2026-03-02T12:21:43.220Z [DEBUG] Found 3 enabled plugins
+2026-03-02T12:21:43.220Z [DEBUG] All plugins already exist, skipping migration
+2026-03-02T12:21:43.220Z [DEBUG] Found 3 installed plugins
+2026-03-02T12:21:43.220Z [DEBUG] Found 0 missing plugins (not installed):
+2026-03-02T12:21:43.220Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-03-02T12:21:43.222Z [DEBUG] Fetching plugin security messages from https://raw.githubusercontent.com/anthropics/claude-plugins-official/refs/heads/security/security.json
+2026-03-02T12:21:43.223Z [DEBUG] Total LSP servers loaded: 0
+2026-03-02T12:21:43.223Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-02T12:21:43.223Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-02T12:21:43.223Z [DEBUG] LSP server manager initialized successfully
+2026-03-02T12:21:43.224Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-02T12:21:43.225Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-02T12:21:43.225Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-02T12:21:43.225Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-03-02T12:21:43.226Z [DEBUG] Watching for changes in setting files C:\Users\aruto\.claude\settings.json, C:\Users\aruto\dev\mock_lightgcn\.claude\settings.json, C:\Users\aruto\dev\mock_lightgcn\.claude\settings.local.json...
+2026-03-02T12:21:43.234Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:43.259Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:43.300Z [DEBUG] Security messages saved successfully
+2026-03-02T12:21:43.328Z [DEBUG] Loaded plugins - Enabled: 3, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-03-02T12:21:43.470Z [ERROR] AxiosError: [url=https://platform.claude.com/v1/oauth/token,status=503,body=upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:21:43.472Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T12:21:43.551Z [DEBUG] Checking for native installer update to version 2.1.63
+2026-03-02T12:21:43.553Z [DEBUG] Found 2.1.63 at C:\Users\aruto\.local\bin\claude.exe, skipping install
+2026-03-02T12:21:43.558Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:43.656Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=C:\Users\aruto\.local\bin\claude.exe)
+2026-03-02T12:21:45.780Z [ERROR] MCP server "plugin:context7:context7" Server stderr: Context7 Documentation MCP Server v2.1.2 running on stdio
+2026-03-02T12:21:45.780Z [DEBUG] MCP server "plugin:context7:context7": Successfully connected to undefined server in 2848ms
+2026-03-02T12:21:45.780Z [DEBUG] MCP server "plugin:context7:context7": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"Context7","version":"2.1.2"}}
+2026-03-02T12:21:45.780Z [DEBUG] [MCP] Server "plugin:context7:context7" connected with subscribe=false
+2026-03-02T12:21:45.810Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:47.443Z [DEBUG] [claudeai-mcp] Fetch failed
+2026-03-02T12:21:48.954Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:21:50.499Z [ERROR] AxiosError: [url=https://platform.claude.com/v1/oauth/token,status=503,body=upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:21:57.419Z [ERROR] Failed to fetch org fast mode status, defaulting to disabled: AxiosError: Request failed with status code 401
+2026-03-02T12:22:48.993Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T12:22:48.993Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T12:22:48.993Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T12:22:48.993Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T12:22:48.994Z [DEBUG] Sending 34 skills via attachment (initial, 34 total sent)
+2026-03-02T12:22:48.994Z [DEBUG] Skill prompt: showing "document-skills:internal-comms" (userFacingName="internal-comms")
+2026-03-02T12:22:48.994Z [DEBUG] Skill prompt: showing "document-skills:brand-guidelines" (userFacingName="brand-guidelines")
+2026-03-02T12:22:48.994Z [DEBUG] Skill prompt: showing "document-skills:frontend-design" (userFacingName="frontend-design")
+2026-03-02T12:22:48.994Z [DEBUG] Skill prompt: showing "document-skills:algorithmic-art" (userFacingName="algorithmic-art")
+2026-03-02T12:22:48.994Z [DEBUG] Skill prompt: showing "document-skills:pdf" (userFacingName="pdf")
+2026-03-02T12:22:48.994Z [DEBUG] Skill prompt: showing "document-skills:mcp-builder" (userFacingName="mcp-builder")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:theme-factory" (userFacingName="theme-factory")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:skill-creator" (userFacingName="skill-creator")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:pptx" (userFacingName="pptx")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:xlsx" (userFacingName="xlsx")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:web-artifacts-builder" (userFacingName="web-artifacts-builder")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:webapp-testing" (userFacingName="webapp-testing")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:doc-coauthoring" (userFacingName="doc-coauthoring")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:canvas-design" (userFacingName="canvas-design")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:slack-gif-creator" (userFacingName="slack-gif-creator")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "document-skills:docx" (userFacingName="docx")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:slack-gif-creator" (userFacingName="slack-gif-creator")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:brand-guidelines" (userFacingName="brand-guidelines")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:pdf" (userFacingName="pdf")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:frontend-design" (userFacingName="frontend-design")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:theme-factory" (userFacingName="theme-factory")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:internal-comms" (userFacingName="internal-comms")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:web-artifacts-builder" (userFacingName="web-artifacts-builder")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:webapp-testing" (userFacingName="webapp-testing")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:algorithmic-art" (userFacingName="algorithmic-art")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:pptx" (userFacingName="pptx")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:doc-coauthoring" (userFacingName="doc-coauthoring")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:skill-creator" (userFacingName="skill-creator")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:mcp-builder" (userFacingName="mcp-builder")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:xlsx" (userFacingName="xlsx")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:docx" (userFacingName="docx")
+2026-03-02T12:22:48.995Z [DEBUG] Skill prompt: showing "example-skills:canvas-design" (userFacingName="canvas-design")
+2026-03-02T12:22:48.996Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-03-02T12:22:48.997Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-02T12:22:48.997Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T12:22:48.997Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T12:22:48.998Z [DEBUG] FileHistory: Added snapshot for c92b5b02-240e-4796-a642-427f6c5d42f8, tracking 0 files
+2026-03-02T12:22:48.999Z [DEBUG] [useDeferredValue] Messages deferred by 2 (0→2)
+2026-03-02T12:22:49.021Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:22:49.040Z [DEBUG] Total plugin output styles loaded: 0
+2026-03-02T12:22:49.110Z [DEBUG] autocompact: tokens=3615 threshold=167000 effectiveWindow=180000
+2026-03-02T12:22:49.113Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T12:22:49.113Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T12:22:49.128Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:22:49.324Z [ERROR] AxiosError: [url=https://platform.claude.com/v1/oauth/token,status=503,body=upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:22:49.326Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T12:22:50.068Z [DEBUG] SSH config check: code=255 configured=false
+2026-03-02T12:22:50.101Z [DEBUG] git pull: cwd=C:\Users\aruto\.claude\plugins\marketplaces\claude-plugins-official ref=default
+2026-03-02T12:22:50.925Z [DEBUG] Successfully refreshed marketplace: claude-plugins-official
+2026-03-02T12:22:50.925Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-03-02T12:22:50.953Z [DEBUG] Using git SHA for context7@claude-plugins-official: 55b58ec6e564
+2026-03-02T12:22:55.803Z [ERROR] Error: Error: 401 {"type":"error","error":{"type":"authentication_error","message":"OAuth token has expired. Please obtain a new token or refresh your existing token."},"request_id":"req_011CYeFEMWW2yV9nCpoNhq5Z"}
+    at generate (B:/~BUN/root/claude.exe:288:28496)
+    at makeRequest (B:/~BUN/root/claude.exe:327:5435)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:22:55.803Z [DEBUG] countTokensWithFallback: API returned null, trying haiku fallback (2 tools)
+2026-03-02T12:22:55.803Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T12:22:55.803Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T12:23:41.232Z [ERROR] AxiosError: [url=https://platform.claude.com/v1/oauth/token,status=503,body=upstream connect error or disconnect/reset before headers. reset reason: connection termination] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:23:41.234Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T12:23:41.604Z [DEBUG] countTokensWithFallback: haiku fallback failed: 401 {"type":"error","error":{"type":"authentication_error","message":"OAuth token has expired. Please obtain a new token or refresh your existing token."},"request_id":"req_011CYeFJBMfnJwwEcU9VKcDB"}
+2026-03-02T12:23:41.605Z [ERROR] Error: Error: 401 {"type":"error","error":{"type":"authentication_error","message":"OAuth token has expired. Please obtain a new token or refresh your existing token."},"request_id":"req_011CYeFJBMfnJwwEcU9VKcDB"}
+    at generate (B:/~BUN/root/claude.exe:288:28496)
+    at makeRequest (B:/~BUN/root/claude.exe:327:5435)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:23:41.605Z [DEBUG] countToolDefinitionTokens returned null for 2 tools: mcp__plugin_context7_context7__resolve-library-id, mcp__plugin_context7_context7__query-docs
+2026-03-02T12:23:41.605Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-03-02T12:23:41.615Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-02T12:23:41.615Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T12:23:41.615Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T12:23:41.617Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:23:41.806Z [ERROR] AxiosError: [url=https://platform.claude.com/v1/oauth/token,status=503,body=upstream connect error or disconnect/reset before headers. reset reason: overflow] Error
+    at ZR (B:/~BUN/root/claude.exe:92:1144)
+    at <anonymous> (B:/~BUN/root/claude.exe:93:10067)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (B:/~BUN/root/claude.exe:95:2149)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:23:41.809Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T12:23:42.132Z [ERROR] API error (attempt 1/11): 401 401 {"type":"error","error":{"type":"authentication_error","message":"OAuth token has expired. Please obtain a new token or refresh your existing token."},"request_id":"req_011CYeFJELFz8YCk5PcVbevf"}
+2026-03-02T12:23:42.134Z [ERROR] Error in API request: 401 {"type":"error","error":{"type":"authentication_error","message":"OAuth token has expired. Please obtain a new token or refresh your existing token."},"request_id":"req_011CYeFJELFz8YCk5PcVbevf"}
+2026-03-02T12:23:42.134Z [ERROR] Error: Error: 401 {"type":"error","error":{"type":"authentication_error","message":"OAuth token has expired. Please obtain a new token or refresh your existing token."},"request_id":"req_011CYeFJELFz8YCk5PcVbevf"}
+    at generate (B:/~BUN/root/claude.exe:288:28496)
+    at makeRequest (B:/~BUN/root/claude.exe:327:5435)
+    at processTicksAndRejections (native:7:39)
+2026-03-02T12:23:42.137Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-02T12:23:42.137Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T12:23:42.137Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T12:23:42.142Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454222142
+2026-03-02T12:23:42.142Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:23:42.143Z [DEBUG] Temp file written successfully, size: 13938 bytes
+2026-03-02T12:23:42.143Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:23:42.143Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454222142 to C:\Users\aruto\.claude.json
+2026-03-02T12:23:42.143Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:23:42.161Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454222161
+2026-03-02T12:23:42.161Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:23:42.164Z [DEBUG] Temp file written successfully, size: 13939 bytes
+2026-03-02T12:23:42.164Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:23:42.164Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454222161 to C:\Users\aruto\.claude.json
+2026-03-02T12:23:42.164Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:23:42.183Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-03-02T12:23:42.186Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:24:06.867Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:24:07.837Z [DEBUG] Full reset (shrink->below): prevHeight=21, nextHeight=19, viewport=21
+2026-03-02T12:24:11.573Z [DEBUG] Full reset (shrink->below): prevHeight=25, nextHeight=14, viewport=21
+2026-03-02T12:26:46.843Z [DEBUG] FileHistory: Making snapshot for message f3d22a88-ca65-4877-94d1-d24237b34908
+2026-03-02T12:26:46.843Z [DEBUG] FileHistory: Added snapshot for f3d22a88-ca65-4877-94d1-d24237b34908, tracking 0 files
+2026-03-02T12:26:46.848Z [DEBUG] [useDeferredValue] Messages deferred by 3 (4→7)
+2026-03-02T12:26:46.854Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:26:46.859Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:26:46.865Z [DEBUG] Full reset (shrink->below): prevHeight=23, nextHeight=21, viewport=21
+2026-03-02T12:26:46.872Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2026-03-02T12:26:46.879Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454406879
+2026-03-02T12:26:46.879Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:26:46.881Z [DEBUG] Temp file written successfully, size: 13940 bytes
+2026-03-02T12:26:46.881Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:26:46.881Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454406879 to C:\Users\aruto\.claude.json
+2026-03-02T12:26:46.882Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:26:46.894Z [DEBUG] Writing to temp file: C:\Users\aruto\.claude.json.tmp.10100.1772454406894
+2026-03-02T12:26:46.894Z [DEBUG] Preserving file permissions: 100666
+2026-03-02T12:26:46.895Z [DEBUG] Temp file written successfully, size: 13941 bytes
+2026-03-02T12:26:46.896Z [DEBUG] Applied original permissions to temp file
+2026-03-02T12:26:46.896Z [DEBUG] Renaming C:\Users\aruto\.claude.json.tmp.10100.1772454406894 to C:\Users\aruto\.claude.json
+2026-03-02T12:26:46.896Z [DEBUG] File C:\Users\aruto\.claude.json written atomically
+2026-03-02T12:26:46.904Z [DEBUG] [useDeferredValue] Messages deferred by 3 (4→7)
+2026-03-02T12:26:46.912Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:26:46.916Z [DEBUG] Full reset (shrink->below): prevHeight=21, nextHeight=19, viewport=21
+2026-03-02T12:26:46.924Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)
+2026-03-02T12:26:47.286Z [DEBUG] Checking for native installer update to version 2.1.63
+2026-03-02T12:26:47.287Z [DEBUG] Found 2.1.63 at C:\Users\aruto\.local\bin\claude.exe, skipping install
+2026-03-02T12:26:47.289Z [DEBUG] [BackendRegistry] isInProcessEnabled: true (mode=auto, insideTmux=false)

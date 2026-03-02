@@ -1,0 +1,8 @@
+[
+  {
+    "from": "team-lead",
+    "text": "{\"type\":\"shutdown_request\",\"requestId\":\"shutdown-1772378283498@implementer-model\",\"from\":\"team-lead\",\"reason\":\"全タスク完了。シャットダウンしてください。\",\"timestamp\":\"2026-03-01T15:18:03.498Z\"}",
+    "timestamp": "2026-03-01T15:18:03.498Z",
+    "read": true
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "from": "researcher",
+    "text": "{\"type\":\"task_assignment\",\"taskId\":\"1\",\"subject\":\"researcher: Multi-Behavior LightGCN 論文調査\",\"description\":\"arxiv:2303.15720 と Wantedly ブログ (https://www.wantedly.com/companies/wantedly/post_articles/1042160) を調査し、docs/research_notes.md を作成する。\\n\\n内容:\\n- Multi-Behavior LightGCN のアーキテクチャ詳細（行動別 GCN ブランチの接続方法）\\n- 埋め込み統合方法（加重和 vs 連結）\\n- マルチタスク損失の定式化\\n- 実装上の注意点・工夫点\\n\\n出力ファイル: C:\\\\Users\\\\aruto\\\\dev\\\\mock_lightgcn\\\\docs\\\\research_notes.md\",\"assignedBy\":\"researcher\",\"timestamp\":\"2026-03-01T14:13:14.850Z\"}",
+    "timestamp": "2026-03-01T14:13:14.850Z",
+    "color": "blue",
+    "read": false
+  },
+  {
+    "from": "team-lead",
+    "text": "指示変更です。`docs/research_notes.md` の作成が完了したら、そこで一度作業を止めてください。\n\nその後、team-lead（私）に対して以下を報告してください：\n- 調査した内容のサマリ（調査できた範囲、アクセスできなかった情報源など）\n- research_notes.md に記載した主要ポイントの概要\n- implementer が実装する際に特に注意すべき点\n\nimplementer への引き渡しは team-lead が判断してから行います。",
+    "summary": "research_notes完成後に停止してteam-leadに報告依頼",
+    "timestamp": "2026-03-01T14:20:27.451Z",
+    "read": false
+  },
+  {
+    "from": "team-lead",
+    "text": "論文調査はここで切り上げて、これまでわかったことのまとめ（docs/research_notes.md の作成）に入ってください。",
+    "summary": "調査終了、まとめ作業に移行",
+    "timestamp": "2026-03-01T14:40:28.009Z",
+    "read": false
+  }
+]

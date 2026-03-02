@@ -1,0 +1,54 @@
+# CLAUDE.md
+
+このファイルは、リポジトリ上でコードを操作する際に Claude Code (claude.ai/code) へ提供するガイダンスです。
+
+## コマンド
+
+```bash
+# 環境構築
+make create_environment   # Python 3.14 uv 仮想環境を作成
+make requirements         # uv sync で依存パッケージをインストール
+
+# コード品質
+make lint                 # ruff format --check と ruff check を実行
+make format               # ruff check --fix と ruff format で自動修正
+
+# テスト
+make test                 # tests/ に対して pytest を実行
+pytest tests/test_data.py # 単一テストファイルを実行
+
+# クリーンアップ
+make clean                # __pycache__ とコンパイル済み Python ファイルを削除
+```
+
+## アーキテクチャ
+
+このプロジェクトは **LightGCN** (Light Graph Convolutional Network) を用いた推薦システムであり、Cookiecutter Data Science テンプレートに従って構成されています。
+
+**パッケージマネージャ:** `uv` (pip や poetry は使わない)
+**リンター/フォーマッター:** `ruff` (行長 99、isort 有効、first-party: `mock_lightgcn`)
+**ビルドバックエンド:** `flit_core`
+
+### パッケージ構成 (`mock_lightgcn/`)
+
+パッケージは線形の ML パイプラインに従っています。
+
+- `config.py` — 設定・変数の一元管理
+- `dataset.py` — データのダウンロード・生成
+- `features.py` — 特徴量エンジニアリング
+- `modeling/train.py` — モデルの学習
+- `modeling/predict.py` — モデルの推論
+- `plots.py` — 可視化
+
+### データディレクトリ
+
+- `data/raw/` — 元の不変データ (変更禁止)
+- `data/interim/` — 変換途中の中間データ
+- `data/processed/` — モデリング用の最終データセット
+- `data/external/` — 外部サードパーティデータ
+
+学習済みモデルは `models/` に、生成されたレポート・図は `reports/figures/` に保存されます。
+
+### 環境変数
+
+`python-dotenv` を使用 — パスや認証情報などの機密設定は `.env` に記述します (コミット対象外)。

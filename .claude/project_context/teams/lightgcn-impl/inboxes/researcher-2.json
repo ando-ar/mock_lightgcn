@@ -1,0 +1,8 @@
+[
+  {
+    "from": "team-lead",
+    "text": "{\"type\":\"shutdown_request\",\"requestId\":\"shutdown-1772377511352@researcher-2\",\"from\":\"team-lead\",\"reason\":\"All tasks complete. Thank you for the research notes — the MB-CGCN cascade architecture was incorporated into the implementation. Shutting down.\",\"timestamp\":\"2026-03-01T15:05:11.352Z\"}",
+    "timestamp": "2026-03-01T15:05:11.352Z",
+    "read": true
+  }
+]

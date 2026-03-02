@@ -1,0 +1,54 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Commands
+
+```bash
+# Environment setup
+make create_environment   # Create Python 3.14 uv virtual environment
+make requirements         # Install dependencies via uv sync
+
+# Code quality
+make lint                 # Run ruff format --check and ruff check
+make format               # Auto-fix with ruff check --fix and ruff format
+
+# Testing
+make test                 # Run pytest on tests/
+pytest tests/test_data.py # Run a single test file
+
+# Cleanup
+make clean                # Delete __pycache__ and compiled Python files
+```
+
+## Architecture
+
+This is a **LightGCN** (Light Graph Convolutional Network) recommendation system project, organized following the Cookiecutter Data Science template.
+
+**Package manager:** `uv` (not pip or poetry)
+**Linter/formatter:** `ruff` (line length 99, isort enabled, first-party: `mock_lightgcn`)
+**Build backend:** `flit_core`
+
+### Package layout (`mock_lightgcn/`)
+
+The package follows a linear ML pipeline:
+
+- `config.py` — centralized settings and variables
+- `dataset.py` — data download/generation
+- `features.py` — feature engineering
+- `modeling/train.py` — model training
+- `modeling/predict.py` — model inference
+- `plots.py` — visualization
+
+### Data directories
+
+- `data/raw/` — original immutable data (do not modify)
+- `data/interim/` — intermediate transformations
+- `data/processed/` — final datasets for modeling
+- `data/external/` — third-party data sources
+
+Trained models are saved under `models/`, generated reports/figures under `reports/figures/`.
+
+### Environment
+
+Uses `python-dotenv` — sensitive config (paths, credentials) goes in `.env` (not committed).

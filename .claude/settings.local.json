@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:www.wantedly.com)",
+      "Bash(uv sync:*)",
+      "WebSearch",
+      "WebFetch(domain:ar5iv.labs.arxiv.org)",
+      "WebFetch(domain:dl.acm.org)",
+      "Bash(uv run:*)",
+      "Bash(mkdir:*)",
+      "Bash(.venv/Scripts/dvc init:*)",
+      "Bash(.venv/Scripts/python:*)",
+      "Bash(.venv/Scripts/ruff check:*)",
+      "Bash(.venv/Scripts/pytest:*)",
+      "Bash(.venv/Scripts/ruff:*)"
+    ]
+  }
+}
