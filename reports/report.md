@@ -22,7 +22,7 @@ user_idに対してoffer_accept_dateは一つ以下。
 recommend_dateに従ってこれを訓練データとテストデータに分割する。
 
 動作確認用にダミーデータも作成できるようにする。
-P(応募|レコメンド)、P(書類通過|応募)、P(オファー|書類通過)、P(オファー受諾|書類通過)はパラメータで指定できるようにする。
+$P(\mathrm{apply} \mid \mathrm{recommend})$、$P(\mathrm{pass} \mid \mathrm{apply})$、$P(\mathrm{offer} \mid \mathrm{pass})$、$P(\mathrm{offer\_accept} \mid \mathrm{offer})$ はパラメータで指定できるようにする。
 
 #### 実装仕様
 
@@ -38,16 +38,16 @@ P(応募|レコメンド)、P(書類通過|応募)、P(オファー|書類通過
 **ダミーデータ生成パラメータのデフォルト値**
 - `num_users`: 500
 - `num_clients`: 200
-- `num_recommendations_per_user`: Poisson(λ=20) でサンプリング（最小1件）
-- `p_apply`: P(応募|レコメンド) = 0.3
-- `p_pass`: P(書類通過|応募) = 0.5
-- `p_offer`: P(オファー|書類通過) = 0.4
-- `p_offer_accept`: P(オファー受諾|オファー) = 0.6
+- `num_recommendations_per_user`: Poisson($\lambda=20$) でサンプリング（最小1件）
+- `p_apply`: $P(\mathrm{apply} \mid \mathrm{recommend}) = 0.3$
+- `p_pass`: $P(\mathrm{pass} \mid \mathrm{apply}) = 0.5$
+- `p_offer`: $P(\mathrm{offer} \mid \mathrm{pass}) = 0.4$
+- `p_offer_accept`: $P(\mathrm{offer\_accept} \mid \mathrm{offer}) = 0.6$
 - `recommend_date` の生成範囲: 2024-01-01 〜 2024-12-31 の一様分布
 
 **インタラクション行列の構築**
 - apply, pass, offer, offer_accept の 4 行動それぞれについて独立した隣接行列 A を構築する
-- 各行列は user×client の二部グラフとして表現し、対称正規化 D^{-1/2} A D^{-1/2} を適用する
+- 各行列は user×client の二部グラフとして表現し、対称正規化 $D^{-1/2} A D^{-1/2}$ を適用する
 
 ### model
 
@@ -69,7 +69,7 @@ https://www.wantedly.com/companies/wantedly/post_articles/1042160
 - バッチサイズ: 1024
 - エポック数: 200
 - Early stopping: バリデーション指標が 20 epoch 連続で改善しない場合に学習を打ち切る
-- 正則化係数 λ: 1e-4（L2 正則化）
+- 正則化係数 $\lambda$: $1 \times 10^{-4}$（L2 正則化）
 
 **損失関数**
 - BPR (Bayesian Personalized Ranking) ロスを使用する
@@ -78,7 +78,7 @@ https://www.wantedly.com/companies/wantedly/post_articles/1042160
 **Multi-Behavior LightGCN の構成**（arxiv:2303.15720 に基づく）
 - apply, pass, offer, offer_accept の各行動について独立した GCN ブランチを持ち、行動ごとの埋め込みを生成する
 - 各行動の埋め込みを加重和で統合し、最終的なユーザー・アイテム埋め込みを得る
-- マルチタスク学習として各行動に対する BPR ロスを合算する。上位行動（offer_accept）の損失重みを大きく設定する（例: offer_accept=4, offer=3, pass=2, apply=1）
+- マルチタスク学習として各行動に対する BPR ロスを合算する。上位行動（offer_accept）の損失重みを大きく設定する（例: $w_{\mathrm{offer\_accept}}=4,\;w_{\mathrm{offer}}=3,\;w_{\mathrm{pass}}=2,\;w_{\mathrm{apply}}=1$）
 
 ### metrics
 
@@ -86,25 +86,25 @@ https://www.wantedly.com/companies/wantedly/post_articles/1042160
 - 書類通過に対するPrecision@k, mAP@k
 - オファーに対するPrecision@k, mAP@k
 - オファー受諾に対するPrecision@k, mAP@k
-- オファー受諾>オファー>書類通過>応募>非応募 としたときのnDCG@k
+- $\mathrm{offer\_accept} > \mathrm{offer} > \mathrm{pass} > \mathrm{apply} > \mathrm{non\_apply}$ としたときの nDCG@k
 
 #### 実装仕様
 
 **k の値**
-- k = 5, 10, 20 を標準とする
+- $k = 5, 10, 20$ を標準とする
 
 **Precision@k の定義**
 - 上位 k 件の推薦リスト中に正例（対象行動を取った client）が何件含まれるかの割合
-- Precision@k = (上位 k 件中の正例数) / k
+- $\mathrm{Precision@}k = \dfrac{n_{\mathrm{relevant}@k}}{k}$
 
 **mAP@k の定義**
 - ユーザーごとに Average Precision@k を算出し、その平均を取る
-- Average Precision@k = Σ_{i=1}^{k} [i番目が正例] × Precision@i / min(正例総数, k)
+- $\mathrm{AP@}k = \dfrac{1}{\min(N_u^+, k)} \sum_{i=1}^{k} \mathbb{1}[y_{u,i}=1] \cdot \mathrm{Precision@}i$
 - 正例が 0 件のユーザーは平均計算から除外する
 
 **nDCG@k のゲイン関数**
-- 行動の関連度スコア: offer_accept=4, offer=3, pass=2, apply=1, 非応募=0
-- gain(i) = (2^{relevance_i} − 1) / log_2(i + 1)（i は 1-indexed）
+- 行動の関連度スコア: $\mathrm{offer\_accept}=4,\;\mathrm{offer}=3,\;\mathrm{pass}=2,\;\mathrm{apply}=1,\;\mathrm{non\_apply}=0$
+- $\mathrm{gain}(i) = \dfrac{2^{\mathrm{relevance}_i} - 1}{\log_2(i + 1)}$（$i$ は 1-indexed）
 - Ideal DCG は関連度スコアの降順に並べたときの DCG で正規化する
 
 **ランキング候補の定義**
