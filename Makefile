@@ -3,7 +3,7 @@
 #################################################################################
 
 PROJECT_NAME = mock_lightgcn
-PYTHON_VERSION = 3.14
+PYTHON_VERSION = 3.13
 PYTHON_INTERPRETER = python
 
 #################################################################################
@@ -25,6 +25,11 @@ clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
+
+## Type check using ty
+.PHONY: typecheck
+typecheck:
+	ty check src
 
 ## Lint using ruff (use `make format` to do formatting)
 .PHONY: lint
@@ -51,8 +56,7 @@ test:
 create_environment:
 	uv venv --python $(PYTHON_VERSION)
 	@echo ">>> New uv virtual environment created. Activate with:"
-	@echo ">>> Windows: .\\\\.venv\\\\Scripts\\\\activate"
-	@echo ">>> Unix/macOS: source ./.venv/bin/activate"
+	@echo ">>> source ./.venv/bin/activate"
 	
 
 
